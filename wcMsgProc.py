@@ -5,7 +5,7 @@ import urllib, urllib2, cookielib
 
 class wcMsgProccessor:
     def parseMsg(self,wcMsg, WCUser):
-    
+    """Put your message processing code here"""
         
         #------------------processing---------------------------
         if (wcMsg.msgType == MESSAGE_TEXT):
