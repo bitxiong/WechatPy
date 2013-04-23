@@ -37,5 +37,5 @@ Then you should modify the file "wcMsgProc.py" as
       #please see "wcData.py" for the structure of the class wcMsg
       #The return content should be set to response.resContent
 #------------------------------------------------------
-      return response #a string containing return string
+      return response 
 ```
