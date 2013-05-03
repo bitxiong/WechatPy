@@ -28,7 +28,7 @@ Then you should modify the file "wcMsgProc.py" as
 
 ```Python
 #------------------processing---------------------------
-      if (wcMsg.msgType == MESSAGE_TEXT):
+      if (wcMsg.msgType == MESSAGE_TEXT):#similar in image messages and location messages
       response = wcTextResponse()
       response.resContent = wcMsg.msgContent
       log(wcMsg.msgHost)
