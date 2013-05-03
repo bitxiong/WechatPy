@@ -40,6 +40,18 @@ class wcTextMsg(wcMsg):
         user.msgCount+=1
         user.save()
         
+class wcLocMsg(wcMsg):
+    lat = 0
+    lon = 0
+    def saveToDB(self,user):
+        p = self.buildDbMsg()
+        p.msgContent = 'lat=%s lon=%s'%(self.lat,self.lon)
+        log(p.msgContent)
+        p.msgFrom = user
+        p.save()
+        user.msgCount+=1
+        user.save()
+        
 class wcRepsonse():
     resType = RESPONSE_NULL
     

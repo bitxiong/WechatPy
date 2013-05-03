@@ -8,7 +8,7 @@ class wcInfoHandler:
     """A simple handler for wechat message"""
     
     def respondMsg(self,rawStr):
-        """main callback handling message"""
+        """main method handling message"""
         #logging.info(rawStr)
 
         msg = self.retrieveMsgContent(rawStr)
@@ -34,10 +34,17 @@ class wcInfoHandler:
         msgHost = self.getTagContent(root, 'ToUserName')
         msgType = self.getTagContent(root,'MsgType')
         msgID = self.getTagContent(root,'MsgId')
+        log(msgType)
         
         if (msgType=='text'):
             msg = wcTextMsg(MESSAGE_TEXT,fromUser,timeStamp,msgID,msgHost)
             msg.msgContent = self.getTagContent(root, 'Content')
+            return msg
+        elif(msgType=='location'):
+            msg = wcLocMsg(MESSAGE_LOC,fromUser,timeStamp,msgID,msgHost)
+            msg.lat = self.getTagContent(root, 'Location_X')
+            #log(msg.msgType)
+            msg.lon = self.getTagContent(root, 'Location_Y')
             return msg
     
     def validateUser(self,crptID):
