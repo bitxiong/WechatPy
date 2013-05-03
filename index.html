@@ -52,7 +52,7 @@ get the request XML file you should call the interface like</p>
 <p>Then you should modify the file "wcMsgProc.py" as</p>
 
 <div class="highlight"><pre><span class="c">#------------------processing---------------------------</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">wcMsg</span><span class="o">.</span><span class="n">msgType</span> <span class="o">==</span> <span class="n">MESSAGE_TEXT</span><span class="p">):</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">wcMsg</span><span class="o">.</span><span class="n">msgType</span> <span class="o">==</span> <span class="n">MESSAGE_TEXT</span><span class="p">):</span><span class="c">#similar in image messages and location messages</span>
       <span class="n">response</span> <span class="o">=</span> <span class="n">wcTextResponse</span><span class="p">()</span>
       <span class="n">response</span><span class="o">.</span><span class="n">resContent</span> <span class="o">=</span> <span class="n">wcMsg</span><span class="o">.</span><span class="n">msgContent</span>
       <span class="n">log</span><span class="p">(</span><span class="n">wcMsg</span><span class="o">.</span><span class="n">msgHost</span><span class="p">)</span>
