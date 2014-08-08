@@ -19,7 +19,7 @@ Put the file into your application folder, then call the interface according to 
 get the request XML file you should call the interface like
 
 ```Python
-from wchooker import wcInfoHandler
+from wchook import wcInfoHandler
 handler = wcInfoHandler()
 responseMsg = handler.respondMsg(rawStr) #rawStr is the raw xml from wechat platform
 ```
